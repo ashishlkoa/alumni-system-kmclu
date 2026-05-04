@@ -23,7 +23,7 @@ const AdminDashboard = () => {
 
   const fetchPendingRequests = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/pending-requests', {
+      const response = await axios.get('https://alumni-system-kmclu.onrender.com/api/admin/pending-requests', {
         headers: { 'x-auth-token': token }
       });
       setRequests(response.data);
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
 
   const handleRequestAction = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin/handle-request/${id}`, { status }, {
+      await axios.put(`https://alumni-system-kmclu.onrender.com/api/admin/handle-request/${id}`, { status }, {
         headers: { 'x-auth-token': token }
       });
       alert(`Request has been ${status}!`);
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
   const handleFilter = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:5000/api/admin/filter?workingCity=${filterCity}`, {
+      const response = await axios.get(`https://alumni-system-kmclu.onrender.com/api/admin/filter?workingCity=${filterCity}`, {
         headers: { 'x-auth-token': token }
       });
       setAlumniList(response.data.data);

@@ -22,7 +22,7 @@ const AlumniDashboard = () => {
       return;
     }
     try {
-      const response = await axios.get('http://localhost:5000/api/alumni/profile', {
+      const response = await axios.get('https://alumni-system-kmclu.onrender.com', {
         headers: { 'x-auth-token': token }
       });
       setProfile(response.data);

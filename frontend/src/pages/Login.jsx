@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault(); // Page refresh hone se rokne ke liye
     try {
       // Backend API ko data bhej rahe hain
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://alumni-system-kmclu.onrender.com', {
         email,
         password
       });
@@ -68,9 +68,13 @@ const Login = () => {
           <button type="submit" style={{ padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', cursor: 'pointer' }}>
             Login
           </button>
+          
         </form>
+        
       </div>
+      
     </div>
+    
   );
 };
 
